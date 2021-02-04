@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/primaryTextColor</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/secondaryColor</item>
         <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
@@ -12,5 +12,14 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="DialogoPersonalizado" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!--Color de los botones-->
+        <item name="colorOnPrimary">@color/primaryColor</item>
+        <!--Color del texto-->
+        <item name="android:textColorPrimary">@color/secondaryTextColor</item>
+        <!--Aspecto general del dialogo-->
+        <item name="android:windowBackground">@drawable/backgroud_dialog</item>
     </style>
 </resources>

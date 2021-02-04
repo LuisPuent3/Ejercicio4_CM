@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
     TextView tvCategoria;
     TextView tvPalabra;
     Ahorcado ahorcado;
+    MediaPlayer ganar, perder;
 
     RequestQueue queue;
     JsonObjectRequest request;
@@ -46,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        //Objetos de Audio
+        ganar = MediaPlayer.create(this, R.raw.excellent);
+        perder = MediaPlayer.create(this, R.raw.zim_laugh);
 
         //Asociacion de elementos de la vista
         gvTeclado = findViewById(R.id.gvTeclado);
@@ -125,6 +131,8 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
             tvPalabra.setText(ahorcado.getPalabra());
             //Valida si se ha ganado la partida
             if(ahorcado.victoria()){
+                //Reproduce sonido
+                ganar.start();
                 //Partida ganada, muestra mensaje
                 partidaGanada();
             }
@@ -133,6 +141,9 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
             actualizarHorca();
             //Valida si se ha perdido la partida
             if(ahorcado.derrota()){
+                //Reproduce sonido
+                perder.start();
+                //Partida perdida, muestra mensaje
                 partidaPerdida();
             }
         }
@@ -140,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
 
     //Metodo para mostrar mensaje de victoria
     public void partidaGanada(){
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this, R.style.DialogoPersonalizado)
                 .setTitle(getResources().getString(R.string.victoria))
                 .setMessage(getResources().getString(R.string.msjVictoria))
                 .setPositiveButton(getResources().getString(R.string.btnPartida), new DialogInterface.OnClickListener() {
@@ -162,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
     //Metodo para mostrar mensaje de derrota
     public void partidaPerdida(){
         //Creacion de un nuevo dialogo
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this, R.style.DialogoPersonalizado)
                 .setTitle(getResources().getString(R.string.derrota))
                 .setMessage(getResources().getString(R.string.msjDerrota) + ahorcado.getPalabraSecreta())
                 .setPositiveButton(getResources().getString(R.string.btnPartida), new DialogInterface.OnClickListener() {
@@ -184,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
     @Override
     public void onErrorResponse(VolleyError error) {
         //Creacion de un nuevo dialogo
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this, R.style.DialogoPersonalizado)
                 .setTitle(getResources().getString(R.string.error))
                 .setMessage(getResources().getString(R.string.errorConexion))
                 .setPositiveButton(getResources().getString(R.string.btnReintentar), new DialogInterface.OnClickListener() {
@@ -216,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
             jugar();
         } catch (JSONException e) {
             //Creacion de un nuevo dialogo
-            new AlertDialog.Builder(this)
+            new AlertDialog.Builder(this, R.style.DialogoPersonalizado)
                     .setTitle(getResources().getString(R.string.error))
                     .setMessage(getResources().getString(R.string.errorProcesamiento))
                     .setPositiveButton(getResources().getString(R.string.btnReintentar), new DialogInterface.OnClickListener() {

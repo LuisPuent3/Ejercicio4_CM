@@ -16,4 +16,7 @@
     <color name="secondaryDarkColor">#00822b</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#ddc2fd</color>
+
+    <color name="transparencia">#6D000000</color>
+    <color name="bordeDialog">#FF7d3d80</color>
 </resources>
