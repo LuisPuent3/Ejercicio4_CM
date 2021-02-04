@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvTecla"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:layout_centerInParent="false"
+    android:layout_centerVertical="false"
+    android:onClick="teclear"
+    app:cardBackgroundColor="@color/secondaryColor">
+
+    <TextView
+        android:id="@+id/tvLetra"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/invader"
+        android:gravity="center"
+        android:text="@string/testRacha"
+        android:textAlignment="gravity"
+        android:textSize="28sp" />
+</com.google.android.material.card.MaterialCardView>
