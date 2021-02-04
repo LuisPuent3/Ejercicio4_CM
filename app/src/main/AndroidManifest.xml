@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ejercicio4">
-
-    <!--Permiso de conexion a internet-->
+    <!-- Permiso de conexion a internet -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,12 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ejercicio4">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Splash" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+
         </activity>
     </application>
 

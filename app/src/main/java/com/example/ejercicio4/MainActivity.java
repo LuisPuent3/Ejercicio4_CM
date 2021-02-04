@@ -13,6 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
     TextView tvRacha;
     TextView tvCategoria;
     TextView tvPalabra;
+    ProgressBar pbConexion;
     Ahorcado ahorcado;
     MediaPlayer ganar, perder;
 
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
         tvPalabra = findViewById(R.id.tvPalabra);
         tvRacha = findViewById(R.id.tvRacha);
         ivAhorcado = findViewById(R.id.ivAhorcado);
+        pbConexion = findViewById(R.id.pbConexion);
 
         //Invoca al metodo para realizar conexion
         conexion();
@@ -66,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
 
     //Metodo para solicitar conexion al servidor
     public void conexion(){
+        //Muestra ProgressBar de conexion
+        pbConexion.setVisibility(View.VISIBLE);
+        
         //Generacion de la cola de conexiones
         queue = Volley.newRequestQueue(this);
         //Generacion de la solicitud, guarda los datos de la respuesta
@@ -216,6 +222,9 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
 
     @Override
     public void onResponse(JSONObject response) {
+        //Quita visibilidad de el ProgressBar
+        pbConexion.setVisibility(View.GONE);
+
         JSONObject respuesta = response;
         try {
             //Recupera elementos de la respuesta JSON recibida
