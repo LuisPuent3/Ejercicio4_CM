@@ -95,25 +95,25 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
     public void actualizarHorca(){
         switch (ahorcado.getErrores()){
             case 1:
-                ivAhorcado.setImageResource(R.drawable.cabeza);
+                ivAhorcado.setImageResource(R.drawable.ahorcado_1);
                 break;
             case 2:
-                ivAhorcado.setImageResource(R.drawable.torso);
+                ivAhorcado.setImageResource(R.drawable.ahorcado_2);
                 break;
             case 3:
-                ivAhorcado.setImageResource(R.drawable.brazo_izq);
+                ivAhorcado.setImageResource(R.drawable.ahorcado_3);
                 break;
             case 4:
-                ivAhorcado.setImageResource(R.drawable.brazo_der);
+                ivAhorcado.setImageResource(R.drawable.ahorcado_4);
                 break;
             case 5:
-                ivAhorcado.setImageResource(R.drawable.pierna_izq);
+                ivAhorcado.setImageResource(R.drawable.ahorcado_5);
                 break;
             case 6:
-                ivAhorcado.setImageResource(R.drawable.pierna_der);
+                ivAhorcado.setImageResource(R.drawable.ahorcado_fin);
                 break;
             default:
-                ivAhorcado.setImageResource(R.drawable.horca);
+                ivAhorcado.setImageResource(R.drawable.ahorcado_0);
                 break;
         }
     }

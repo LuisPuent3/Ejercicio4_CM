@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="@drawable/background"
     tools:context=".MainActivity" >
 
     <ImageView
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.142"
-        app:srcCompat="@drawable/horca" />
+        app:srcCompat="@drawable/ahorcado_0" />
 
     <TextView
         android:id="@+id/tvPalabra"
@@ -40,12 +40,12 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/invader"
+        android:layout_width="236dp"
+        android:layout_height="62dp"
+        android:fontFamily="monospace"
         android:text="@string/lblCategoria"
         android:textColor="@color/secondaryTextColor"
-        android:textSize="40sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.082"
@@ -57,9 +57,9 @@
         android:id="@+id/tvCategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/invader"
+        android:fontFamily="monospace"
         android:textColor="@color/secondaryTextColor"
-        android:textSize="28sp"
+        android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.929"
@@ -71,10 +71,10 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/invader"
+        android:fontFamily="monospace"
         android:text="@string/lblRacha"
         android:textColor="@color/secondaryTextColor"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"
@@ -86,10 +86,10 @@
         android:id="@+id/tvRacha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/invader"
+        android:fontFamily="monospace"
         android:text="@string/testRacha"
         android:textColor="@color/secondaryTextColor"
-        android:textSize="52sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.063"
